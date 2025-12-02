@@ -30,8 +30,8 @@ public class LengthOfLongestSubsequence {
         int maxLength = 0;
         Map<Character, Integer> visited = new HashMap();
         for (int right=0, left = 0; right<s.length(); right++) {
-            if (visited.containsKey(s.charAt(right)) && 
-            visited.get(s.charAt(right)) >= left) {
+            if (visited.containsKey(s.charAt(right)) &&
+                    visited.get(s.charAt(right)) >= left) {
                 left = visited.get(s.charAt(right)) + 1;
             }
             maxLength = Math.max(maxLength, right - left + 1);
